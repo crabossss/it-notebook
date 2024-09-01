@@ -276,3 +276,39 @@ my-app.war
 - static/：存放静态资源文件，如 CSS、JavaScript 和图片等。
 
 war包无需添加对应类加载器，因为其运行在tomcat上，tomcat中已经包含了一套完整的类加载机制用来加载各种依赖。
+
+## 八、子模块列表
+```agsl
+  <modules>
+    <module>ChildModuleOne</module>
+    <module>ChildModuleTwo</module>
+    <module>ChildModuleThree</module>
+    <module>ChildModuleFour</module>
+  </modules>
+```
+子模块列表主要存在于父模块中，用来使得父模块统一管理其下子模块。
+
+## 九、属性列表
+```agsl
+  <properties>
+    <maven.compiler.source>1.7<maven.compiler.source>
+    <maven.compiler.target>1.7<maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+```
+定义的属性可以在 pom.xml 文件中任意处使用(包括子模块的pom)，使用方式为 ${propertie} 。
+
+注意，在profiles的profile中，也可以为多环境分别配置properties数据，一般用来为不同环境订制不同的配置信息，如jar包版本等等。
+
+
+
+
+
+
+
+
+
+
+
+
