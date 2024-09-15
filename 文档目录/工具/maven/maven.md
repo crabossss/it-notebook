@@ -297,7 +297,7 @@ war包无需添加对应类加载器，因为其运行在tomcat上，tomcat中�
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 ```
-定义的属性可以在 pom.xml 文件中任意处使用(包括子模块的pom)，使用方式为 ${propertie} 。
+定义的属性可以在 pom.xml 文件中任意处使用(包括子模块的pom)，使用方式为 ${propertie}；也可以在.xml或者.properties等配置文件中使用，前提是配置了对应的`<build><resources><filtering>`为true 。
 
 注意，在profiles的profile中，也可以为多环境分别配置properties数据，一般用来为不同环境订制不同的配置信息，如jar包版本等等。
 
